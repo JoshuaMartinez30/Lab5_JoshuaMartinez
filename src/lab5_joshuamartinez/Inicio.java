@@ -3,6 +3,7 @@ package lab5_joshuamartinez;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -242,10 +243,13 @@ public class Inicio extends javax.swing.JFrame {
         jLabel12.setText("Agilidad mental");
 
         btnAgregar1.setText("Agregar");
+        btnAgregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregar1ActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("Nombre del escuadron");
-
-        cboVillanos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout JD_VillanosLayout = new javax.swing.GroupLayout(JD_Villanos.getContentPane());
         JD_Villanos.getContentPane().setLayout(JD_VillanosLayout);
@@ -311,8 +315,10 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
+        jl_SuperH.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(jl_SuperH);
 
+        jl_Villanos.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(jl_Villanos);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
@@ -329,8 +335,8 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         JD_VisualizarLayout.setVerticalGroup(
             JD_VisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,9 +499,51 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_VisualizarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        int fuerza, agilidadF, agilidadM, suma;
+        fuerza = Integer.parseInt(tf_Fuerza.getText());
+        agilidadF = Integer.parseInt(tf_AgilidaF.getText());
+        agilidadM = Integer.parseInt(tf_AgilidadM.getText());
+        suma = fuerza+agilidadF+agilidadM;
+        if (suma==100) {
+            DefaultListModel modelo
+                = (DefaultListModel) jl_SuperH.getModel();
+        modelo.addElement(new Super_heroe(tf_Nombre.getText(), tf_Poder.getText(), tf_Debilidad.getText(), cbo_Super.getSelectedItem().toString(), fuerza, agilidadF, agilidadM));
         
-        
+        tf_Nombre.setText("");
+        tf_Poder.setText("");
+        tf_Debilidad.setText("");
+        tf_AgilidaF.setText("");
+        tf_AgilidadM.setText("");
+        tf_Fuerza.setText("");
+        cbo_Super.setSelectedIndex(0);
+        }else{
+            JOptionPane.showMessageDialog(JD_SuperHeroes, "No tiene lo suficiente para ser un super heroe");
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed
+        // TODO add your handling code here:
+        int fuerza, agilidadF, agilidadM, suma;
+        fuerza = Integer.parseInt(tf_Fuerza1.getText());
+        agilidadF = Integer.parseInt(tf_AgilidaF1.getText());
+        agilidadM = Integer.parseInt(tf_AgilidadM1.getText());
+        suma = fuerza+agilidadF+agilidadM;
+        if (suma==100) {
+            DefaultListModel modelo
+                = (DefaultListModel) jl_Villanos.getModel();
+        modelo.addElement(new Super_heroe(tf_Nombre1.getText(), tf_Poder1.getText(), tf_Debilidad1.getText(), cboVillanos.getSelectedItem().toString(), fuerza, agilidadF, agilidadM));
+        
+        tf_Nombre1.setText("");
+        tf_Poder1.setText("");
+        tf_Debilidad1.setText("");
+        tf_AgilidaF1.setText("");
+        tf_AgilidadM1.setText("");
+        tf_Fuerza1.setText("");
+        cboVillanos.setSelectedIndex(0);
+        }else{
+            JOptionPane.showMessageDialog(JD_SuperHeroes, "No tiene lo suficiente para ser un super heroe");
+        }
+    }//GEN-LAST:event_btnAgregar1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

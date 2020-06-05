@@ -11,21 +11,20 @@ package lab5_joshuamartinez;
  */
 public class Super_heroe {
     private String nombre, poder, debilidad, escuadron;
-    private int fuerza, agilidad_fisica, agilidad, mental;
+    private int fuerza, agilidad_fisica, agilidad_mental;
 
     public Super_heroe() {
        
     }
 
-    public Super_heroe(String nombre, String poder, String debilidad, String escuadron, int fuerza, int agilidad_fisica, int agilidad, int mental) {
+    public Super_heroe(String nombre, String poder, String debilidad, String escuadron, int fuerza, int agilidad_fisica, int agilidad_mental) {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
         this.escuadron = escuadron;
         this.fuerza = fuerza;
         this.agilidad_fisica = agilidad_fisica;
-        this.agilidad = agilidad;
-        this.mental = mental;
+        this.agilidad_mental = agilidad_mental;
     }
 
     public String getNombre() {
@@ -76,24 +75,16 @@ public class Super_heroe {
         this.agilidad_fisica = agilidad_fisica;
     }
 
-    public int getAgilidad() {
-        return agilidad;
+    public int getAgilidad_mental() {
+        return agilidad_mental;
     }
 
-    public void setAgilidad(int agilidad) {
-        this.agilidad = agilidad;
-    }
-
-    public int getMental() {
-        return mental;
-    }
-
-    public void setMental(int mental) {
-        this.mental = mental;
+    public void setAgilidad_mental(int agilidad_mental) {
+        this.agilidad_mental = agilidad_mental;
     }
 
     @Override
     public String toString() {
-        return nombre;
+        return nombre + " " + fuerza;
     }
 }
