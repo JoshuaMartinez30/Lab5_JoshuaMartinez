@@ -9,11 +9,12 @@ public class Escuadron {
     public Escuadron() {
     }
 
-    public Escuadron(String nombre, String lugar_base, String lider, String tipo) {
+    public Escuadron(String nombre, String lugar_base, String lider, String tipo, ArrayList lista) {
         this.nombre = nombre;
         this.lugar_base = lugar_base;
         this.lider = lider;
         this.tipo = tipo;
+        setLista(lista);
     }
 
     public String getNombre() {
@@ -58,7 +59,7 @@ public class Escuadron {
 
     @Override
     public String toString() {
-        return "Escuadron{" + "nombre=" + nombre + ", lugar_base=" + lugar_base + ", lider=" + lider + ", tipo=" + tipo + ", lista=" + lista + '}';
+        return nombre;
     }
     
     
