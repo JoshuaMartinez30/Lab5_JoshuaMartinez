@@ -17,6 +17,12 @@ public class Escuadron {
         setLista(lista);
     }
 
+    public Escuadron(String nombre, String lugar_base, String tipo) {
+        this.nombre = nombre;
+        this.lugar_base = lugar_base;
+        this.tipo = tipo;
+    }
+    
     public String getNombre() {
         return nombre;
     }

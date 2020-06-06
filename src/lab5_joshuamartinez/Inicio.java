@@ -61,20 +61,29 @@ public class Inicio extends javax.swing.JFrame {
         btnAgregar1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         cboVillanos = new javax.swing.JComboBox<>();
-        JD_Visualizar = new javax.swing.JDialog();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jl_SuperH = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jl_Villanos = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jt_Escuadrones = new javax.swing.JTree();
         bg_personaje = new javax.swing.ButtonGroup();
+        JD_VisualizarH = new javax.swing.JDialog();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_SuperH = new javax.swing.JList<>();
+        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        JD_VisualizarVillanos = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_Villanos = new javax.swing.JList<>();
+        btnEliminar1 = new javax.swing.JButton();
+        btnMoficar1 = new javax.swing.JButton();
+        JD_VualizarArbol = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_Escuadrones = new javax.swing.JTree();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmi_Escuadron = new javax.swing.JMenuItem();
         jmi_SuperH = new javax.swing.JMenuItem();
         jmi_Villanos = new javax.swing.JMenuItem();
-        jmi_Visualizar = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jmi_Super = new javax.swing.JMenuItem();
+        jmi_villano = new javax.swing.JMenuItem();
+        jmi_arbol = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmi_Salir = new javax.swing.JMenuItem();
 
@@ -316,37 +325,100 @@ public class Inicio extends javax.swing.JFrame {
         );
 
         jl_SuperH.setModel(new DefaultListModel());
-        jScrollPane1.setViewportView(jl_SuperH);
+        jScrollPane4.setViewportView(jl_SuperH);
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnModificar.setText("Modificar");
+
+        javax.swing.GroupLayout JD_VisualizarHLayout = new javax.swing.GroupLayout(JD_VisualizarH.getContentPane());
+        JD_VisualizarH.getContentPane().setLayout(JD_VisualizarHLayout);
+        JD_VisualizarHLayout.setHorizontalGroup(
+            JD_VisualizarHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VisualizarHLayout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addGroup(JD_VisualizarHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(JD_VisualizarHLayout.createSequentialGroup()
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(240, Short.MAX_VALUE))
+        );
+        JD_VisualizarHLayout.setVerticalGroup(
+            JD_VisualizarHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VisualizarHLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(JD_VisualizarHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
 
         jl_Villanos.setModel(new DefaultListModel());
-        jScrollPane2.setViewportView(jl_Villanos);
+        jScrollPane1.setViewportView(jl_Villanos);
+
+        btnEliminar1.setText("Eliminar");
+        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar1ActionPerformed(evt);
+            }
+        });
+
+        btnMoficar1.setText("Modificar");
+
+        javax.swing.GroupLayout JD_VisualizarVillanosLayout = new javax.swing.GroupLayout(JD_VisualizarVillanos.getContentPane());
+        JD_VisualizarVillanos.getContentPane().setLayout(JD_VisualizarVillanosLayout);
+        JD_VisualizarVillanosLayout.setHorizontalGroup(
+            JD_VisualizarVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VisualizarVillanosLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(JD_VisualizarVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_VisualizarVillanosLayout.createSequentialGroup()
+                        .addComponent(btnEliminar1)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnMoficar1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+        JD_VisualizarVillanosLayout.setVerticalGroup(
+            JD_VisualizarVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VisualizarVillanosLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(JD_VisualizarVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminar1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(btnMoficar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
+        );
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
         jt_Escuadrones.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane3.setViewportView(jt_Escuadrones);
+        jScrollPane2.setViewportView(jt_Escuadrones);
 
-        javax.swing.GroupLayout JD_VisualizarLayout = new javax.swing.GroupLayout(JD_Visualizar.getContentPane());
-        JD_Visualizar.getContentPane().setLayout(JD_VisualizarLayout);
-        JD_VisualizarLayout.setHorizontalGroup(
-            JD_VisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JD_VisualizarLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+        javax.swing.GroupLayout JD_VualizarArbolLayout = new javax.swing.GroupLayout(JD_VualizarArbol.getContentPane());
+        JD_VualizarArbol.getContentPane().setLayout(JD_VualizarArbolLayout);
+        JD_VualizarArbolLayout.setHorizontalGroup(
+            JD_VualizarArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VualizarArbolLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(147, Short.MAX_VALUE))
         );
-        JD_VisualizarLayout.setVerticalGroup(
-            JD_VisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JD_VisualizarLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(JD_VisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(148, Short.MAX_VALUE))
+        JD_VualizarArbolLayout.setVerticalGroup(
+            JD_VualizarArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_VualizarArbolLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -384,13 +456,33 @@ public class Inicio extends javax.swing.JFrame {
         });
         jMenu1.add(jmi_Villanos);
 
-        jmi_Visualizar.setText("Visualizar");
-        jmi_Visualizar.addActionListener(new java.awt.event.ActionListener() {
+        jMenu2.setText("Visualizar");
+
+        jmi_Super.setText("Super heroes");
+        jmi_Super.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_VisualizarActionPerformed(evt);
+                jmi_SuperActionPerformed(evt);
             }
         });
-        jMenu1.add(jmi_Visualizar);
+        jMenu2.add(jmi_Super);
+
+        jmi_villano.setText("Villanos");
+        jmi_villano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_villanoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmi_villano);
+
+        jmi_arbol.setText("Arbol");
+        jmi_arbol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_arbolActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmi_arbol);
+
+        jMenu1.add(jMenu2);
         jMenu1.add(jSeparator1);
 
         jmi_Salir.setText("Salir");
@@ -430,26 +522,24 @@ public class Inicio extends javax.swing.JFrame {
         DefaultMutableTreeNode raiz
                 = (DefaultMutableTreeNode) m.getRoot();
         DefaultMutableTreeNode nodo_Escuadrones;
+        Escuadron p = new Escuadron(tf_Nombre.getText(), tf_Lugar.getText(), tipo);
         nodo_Escuadrones
                 = new DefaultMutableTreeNode(
-                        new Escuadron(tf_NombreE.getText(), tf_Lugar.getText(), lider, tipo, miembros));
+                        new Escuadron(tf_NombreE.getText(), tf_Lugar.getText(), tipo));
 
         DefaultMutableTreeNode escuadron;
+        
         escuadron = new DefaultMutableTreeNode(
                 tipo
         );
-
-        DefaultMutableTreeNode lista;
-        lista = new DefaultMutableTreeNode(
-                miembros
-        );
-        escuadron.add(lista);
-        nodo_Escuadrones.add(escuadron);
-        raiz.add(nodo_Escuadrones);
+        escuadron.add(nodo_Escuadrones);
+        raiz.add(escuadron);
         if (tipo.equalsIgnoreCase("super heroe")) {
             model.addElement(nodo_Escuadrones);
+            cbo_Super.setModel(model);
         }else{
             modelo.addElement(nodo_Escuadrones);
+            cboVillanos.setModel(modelo);
         }
         
         m.reload();
@@ -490,14 +580,6 @@ public class Inicio extends javax.swing.JFrame {
         JD_Villanos.setVisible(true);
     }//GEN-LAST:event_jmi_VillanosActionPerformed
 
-    private void jmi_VisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_VisualizarActionPerformed
-        // TODO add your handling code here:
-        JD_Visualizar.setModal(true);
-        JD_Visualizar.pack();
-        JD_Visualizar.setLocationRelativeTo(null);
-        JD_Visualizar.setVisible(true);
-    }//GEN-LAST:event_jmi_VisualizarActionPerformed
-
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         int fuerza, agilidadF, agilidadM, suma;
         fuerza = Integer.parseInt(tf_Fuerza.getText());
@@ -508,7 +590,6 @@ public class Inicio extends javax.swing.JFrame {
             DefaultListModel modelo
                 = (DefaultListModel) jl_SuperH.getModel();
         modelo.addElement(new Super_heroe(tf_Nombre.getText(), tf_Poder.getText(), tf_Debilidad.getText(), cbo_Super.getSelectedItem().toString(), fuerza, agilidadF, agilidadM));
-        
         tf_Nombre.setText("");
         tf_Poder.setText("");
         tf_Debilidad.setText("");
@@ -544,6 +625,46 @@ public class Inicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(JD_SuperHeroes, "No tiene lo suficiente para ser un super heroe");
         }
     }//GEN-LAST:event_btnAgregar1ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        int eli = jl_SuperH.getSelectedIndex();
+        DefaultListModel modelo
+                = (DefaultListModel) jl_SuperH.getModel();
+        modelo.remove(eli);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jmi_SuperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_SuperActionPerformed
+        // TODO add your handling code here:
+        JD_VisualizarH.setModal(true);
+        JD_VisualizarH.pack();
+        JD_VisualizarH.setLocationRelativeTo(null);
+        JD_VisualizarH.setVisible(true);
+    }//GEN-LAST:event_jmi_SuperActionPerformed
+
+    private void jmi_villanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_villanoActionPerformed
+        // TODO add your handling code here:
+        JD_VisualizarVillanos.setModal(true);
+        JD_VisualizarVillanos.pack();
+        JD_VisualizarVillanos.setLocationRelativeTo(null);
+        JD_VisualizarVillanos.setVisible(true);
+    }//GEN-LAST:event_jmi_villanoActionPerformed
+
+    private void jmi_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_arbolActionPerformed
+        // TODO add your handling code here:
+        JD_VualizarArbol.setModal(true);
+        JD_VualizarArbol.pack();
+        JD_VualizarArbol.setLocationRelativeTo(null);
+        JD_VualizarArbol.setVisible(true);
+    }//GEN-LAST:event_jmi_arbolActionPerformed
+
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        // TODO add your handling code here:
+        int eli = jl_Villanos.getSelectedIndex();
+        DefaultListModel modelo
+                = (DefaultListModel) jl_Villanos.getModel();
+        modelo.remove(eli);
+    }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -581,11 +702,17 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JDialog JD_Escuadron;
     private javax.swing.JDialog JD_SuperHeroes;
     private javax.swing.JDialog JD_Villanos;
-    private javax.swing.JDialog JD_Visualizar;
+    private javax.swing.JDialog JD_VisualizarH;
+    private javax.swing.JDialog JD_VisualizarVillanos;
+    private javax.swing.JDialog JD_VualizarArbol;
     private javax.swing.ButtonGroup bg_personaje;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAgregar1;
     private javax.swing.JButton btnAgregarE;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminar1;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnMoficar1;
     private javax.swing.JComboBox<String> cboVillanos;
     private javax.swing.JComboBox<String> cbo_Super;
     private javax.swing.JLabel jLabel1;
@@ -606,18 +733,21 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JList<String> jl_SuperH;
     private javax.swing.JList<String> jl_Villanos;
     private javax.swing.JMenuItem jmi_Escuadron;
     private javax.swing.JMenuItem jmi_Salir;
+    private javax.swing.JMenuItem jmi_Super;
     private javax.swing.JMenuItem jmi_SuperH;
     private javax.swing.JMenuItem jmi_Villanos;
-    private javax.swing.JMenuItem jmi_Visualizar;
+    private javax.swing.JMenuItem jmi_arbol;
+    private javax.swing.JMenuItem jmi_villano;
     private javax.swing.JTree jt_Escuadrones;
     private javax.swing.JRadioButton rb_SuperH;
     private javax.swing.JRadioButton rb_villano;

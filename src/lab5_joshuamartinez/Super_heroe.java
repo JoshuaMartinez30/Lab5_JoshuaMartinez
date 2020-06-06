@@ -1,14 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab5_joshuamartinez;
-
-/**
- *
- * @author joshu
- */
 public class Super_heroe {
     private String nombre, poder, debilidad, escuadron;
     private int fuerza, agilidad_fisica, agilidad_mental;
