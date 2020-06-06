@@ -19,6 +19,15 @@ public class Villano {
         this.agilidad_fisica = agilidad_fisica;
         this.agilidad_mental = agilidad_mental;
     }
+    
+    public Villano(String nombre, String poder, String debilidad, int fuerza, int agilidad_fisica, int agilidad_mental) {
+        this.nombre = nombre;
+        this.poder = poder;
+        this.debilidad = debilidad;
+        this.fuerza = fuerza;
+        this.agilidad_fisica = agilidad_fisica;
+        this.agilidad_mental = agilidad_mental;
+    }
 
     public String getNombre() {
         return nombre;
@@ -78,7 +87,7 @@ public class Villano {
 
     @Override
     public String toString() {
-        return nombre + "" + debilidad;
+        return nombre + "  " + debilidad;
     }
 
     

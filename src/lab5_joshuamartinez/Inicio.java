@@ -335,6 +335,11 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JD_VisualizarHLayout = new javax.swing.GroupLayout(JD_VisualizarH.getContentPane());
         JD_VisualizarH.getContentPane().setLayout(JD_VisualizarHLayout);
@@ -346,7 +351,7 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(JD_VisualizarHLayout.createSequentialGroup()
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(240, Short.MAX_VALUE))
         );
@@ -373,6 +378,16 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         btnMoficar1.setText("Modificar");
+        btnMoficar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMoficar1MouseClicked(evt);
+            }
+        });
+        btnMoficar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoficar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JD_VisualizarVillanosLayout = new javax.swing.GroupLayout(JD_VisualizarVillanos.getContentPane());
         JD_VisualizarVillanos.getContentPane().setLayout(JD_VisualizarVillanosLayout);
@@ -486,6 +501,11 @@ public class Inicio extends javax.swing.JFrame {
         jMenu1.add(jSeparator1);
 
         jmi_Salir.setText("Salir");
+        jmi_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_SalirActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_Salir);
 
         jMenuBar1.add(jMenu1);
@@ -532,7 +552,7 @@ public class Inicio extends javax.swing.JFrame {
         escuadron = new DefaultMutableTreeNode(
                 tipo
         );
-        escuadron.add(nodo_Escuadrones);
+        
         raiz.add(escuadron);
         if (tipo.equalsIgnoreCase("super heroe")) {
             model.addElement(nodo_Escuadrones);
@@ -665,6 +685,68 @@ public class Inicio extends javax.swing.JFrame {
                 = (DefaultListModel) jl_Villanos.getModel();
         modelo.remove(eli);
     }//GEN-LAST:event_btnEliminar1ActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+        String nombre, poder, debilidad;
+        int fuerza, agilidadF, agilidadM, suma;
+        if (jl_SuperH.getSelectedIndex() >= 0) {
+            nombre = JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nuevo Nombre: ");
+            poder = JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nuevo Poder: ");
+            debilidad = JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Debilidad: ");
+            fuerza = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Fuerza: "));
+            agilidadF = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Agilidad Fisica: "));
+            agilidadM = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Agilidad Mental: "));
+            suma=fuerza+agilidadF+agilidadM;
+            while (suma < 100 || suma > 100) {
+                fuerza = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva fuerza: "));
+                agilidadF = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Agilidad Fisica: "));
+                agilidadM = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarH, "Ingrese nueva Agilidad Mental: "));
+            }
+            Super_heroe s = new Super_heroe(nombre, poder, debilidad, fuerza, agilidadF, agilidadM);
+            jl_SuperH.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_SuperH.getModel();
+            modelo.addElement(s);
+            jl_SuperH.setModel(modelo);
+        }
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnMoficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoficar1ActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_btnMoficar1ActionPerformed
+
+    private void btnMoficar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMoficar1MouseClicked
+        // TODO add your handling code here:
+        String nombre, poder, debilidad;
+        int fuerza, agilidadF, agilidadM, suma;
+        if (jl_Villanos.getSelectedIndex() >= 0) {
+            nombre = JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nuevo Nombre: ");
+            poder = JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nuevo Poder: ");
+            debilidad = JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Debilidad: ");
+            fuerza = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Fuerza: "));
+            agilidadF = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Agilidad fisica: "));
+            agilidadM = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Agilidad mental: "));
+            suma=fuerza+agilidadF+agilidadM;
+            while (suma < 100 || suma > 100) {
+                fuerza = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese Nueva Fuerza: "));
+                agilidadF = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Agilidad fisica: "));
+                agilidadM = Integer.parseInt(JOptionPane.showInputDialog(JD_VisualizarVillanos, "Ingrese nueva Agilidad mental: "));
+            }
+            Villano v = new Villano(nombre, poder, debilidad, fuerza, agilidadF, agilidadM);
+            jl_Villanos.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_Villanos.getModel();
+            modelo.addElement(v);
+            modelo.removeElementAt(jl_Villanos.getSelectedIndex());
+            jl_Villanos.setModel(modelo);
+        }
+    }//GEN-LAST:event_btnMoficar1MouseClicked
+
+    private void jmi_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jmi_SalirActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
